@@ -3,14 +3,18 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
+import { SharedModule } from './shared/shared-module';
+import { HomePage } from './home-page/home-page';
 
 @NgModule({
   declarations: [
-    App
+    App,
+    HomePage
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SharedModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners()

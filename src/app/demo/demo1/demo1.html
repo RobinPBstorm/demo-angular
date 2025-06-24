@@ -1,1 +1,14 @@
-<p>demo1 works!</p>
+<h1>Les Bindings</h1>
+
+<h2>Les Property bindings</h2>
+<h3>Le One-way</h3>
+<p>Bonjour {{name}}</p>
+
+<h3>Le Two-way</h3>
+<input type="text" [(ngModel)]="name">
+
+<h2>Les Event Bindings</h2>
+<button (click)="DireBonjour()">{{labelBoutton}}</button>
+
+<h2>Les Attributes bindings</h2>
+<button [disabled]="bouttonDesactive">Dire au revoir</button>

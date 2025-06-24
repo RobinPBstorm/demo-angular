@@ -4,6 +4,9 @@ import { Demo1 } from './demo1/demo1';
 
 const routes: Routes = [
   {path: "demo1", component: Demo1}
+  { path: "", redirectTo: "demo1", pathMatch: 'full' },
+  // futur redirection not found
+  { path: "**", redirectTo: "demo1", pathMatch: 'full'}
 ];
 
 @NgModule({
