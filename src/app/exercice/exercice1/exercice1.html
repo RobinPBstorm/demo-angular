@@ -1,1 +1,9 @@
-<p>exercice1 works!</p>
+<h1>Le chrono</h1>
+<div>
+  <h2>{{chrono | numberToTime}}</h2>
+</div>
+<div>
+  <button (click)="play()" [disabled]="enCours">play</button>
+  <button (click)="pause()" [disabled]="!enCours">pause</button>
+  <button (click)="reset()">reset</button>
+</div>
