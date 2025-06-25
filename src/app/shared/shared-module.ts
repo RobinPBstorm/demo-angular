@@ -4,15 +4,15 @@ import { Menu } from './menu/menu';
 import { RouterModule } from '@angular/router';
 import { ToFahrenheitPipe } from './pipes/to-fahrenheit-pipe';
 import { Highlight } from './directives/highlight';
-
-
+import { ColorSyntaxe } from './directives/code/color-syntaxe';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     Menu,
     ToFahrenheitPipe,
-    Highlight
+    Highlight,
+    ColorSyntaxe
   ],
   imports: [
     CommonModule,
@@ -23,6 +23,7 @@ import { FormsModule } from '@angular/forms';
     Menu,
     ToFahrenheitPipe,
     Highlight,
+    ColorSyntaxe,
     FormsModule
   ]
 })

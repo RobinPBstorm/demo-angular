@@ -1,4 +1,4 @@
-export class livre{
+export class Livre{
   titre?: string;
   nombrePage?: number;
   auteur?: string;

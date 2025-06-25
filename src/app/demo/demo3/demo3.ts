@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { livre } from '../../shared/models/livre';
+import { Livre } from '../../shared/models/livre';
 
 @Component({
   selector: 'app-demo3',
@@ -14,9 +14,9 @@ export class Demo3 {
 
   mesNombres : number[] = [1, 2, 3, 4];
 
-  mesLivres : livre[] = [
-    new livre("Le tour du monde en 80 jours",300 , "aventure", "Jules Verne"),
-    new livre("Harry Potter: L'école des sorciers",350 ,"fantaisie" , "J.K. Rowling"),
+  mesLivres : Livre[] = [
+    new Livre("Le tour du monde en 80 jours",300 , "aventure", "Jules Verne"),
+    new Livre("Harry Potter: L'école des sorciers",350 ,"fantaisie" , "J.K. Rowling"),
   ];
 
   humeurDuJour: string = "";
