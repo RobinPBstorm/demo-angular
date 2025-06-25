@@ -1,9 +1,21 @@
 <h1>Le chrono</h1>
-<div>
-  <h2>{{chrono | numberToTime}}</h2>
-</div>
-<div>
-  <button (click)="play()" [disabled]="enCours">play</button>
-  <button (click)="pause()" [disabled]="!enCours">pause</button>
-  <button (click)="reset()">reset</button>
-</div>
+  <article>
+    <h2>Objectif:</h2>
+    <section>
+      <p> Mettre en place un chronomètre- 3 Boutons : </p>
+      <ul>
+        <li>Start, Pause, Reset (actif/inactif en fonction des besoins)</li>
+        <li>Affichage “xx minutes xx secondes”</li>
+      </ul>
+    </section>
+  </article>
+  
+<article>
+  <h2>Exercice:</h2>
+  <section>
+    <h3>{{chrono | numberToTime}}</h3>
+    <button (click)="play()" [disabled]="enCours">play</button>
+    <button (click)="pause()" [disabled]="!enCours">pause</button>
+    <button (click)="reset()">reset</button>
+  </section>
+</article>

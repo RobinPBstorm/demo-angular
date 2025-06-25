@@ -1,14 +1,35 @@
 <h1>Les Bindings</h1>
 
-<h2>Les Property bindings</h2>
-<h3>Le One-way</h3>
-<p>Bonjour {{name}}</p>
+<article>
+  <h2>Les Property bindings</h2>
+  <section>
+    <h3>Le One-way</h3>
+    <p>Bonjour {{name}}</p>
+  </section>
+  <section>
+    <h3>Le Two-way</h3>
+    <input type="text" [(ngModel)]="name">
+  </section>
+</article>
+<article>
+  <h2>Les Event Bindings</h2>
+  <section>
+    <button (click)="DireBonjour()">{{labelBoutton}}</button>
+  </section>
+</article>
+<article>
+  <h2>Les Attributes bindings</h2>
+  <section>
+    <button [disabled]="bouttonDesactive">Dire au revoir</button>
+  </section>
+</article>
 
-<h3>Le Two-way</h3>
-<input type="text" [(ngModel)]="name">
 
-<h2>Les Event Bindings</h2>
-<button (click)="DireBonjour()">{{labelBoutton}}</button>
 
-<h2>Les Attributes bindings</h2>
-<button [disabled]="bouttonDesactive">Dire au revoir</button>
+
+
+
+
+
+
+

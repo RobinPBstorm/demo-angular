@@ -1,4 +1,16 @@
 <h1>Les pipes</h1>
-<p>{{message | uppercase}}</p>
-<p>{{maDate | date: 'dd/MMMM/yy'}}</p>
-<p>{{celsius | toFahrenheit}}</p>
+<article>
+  <h2>Example de pipe pour formatter du texte</h2>
+  <section>
+    <p>{{message | uppercase}}</p>
+  </section>
+  <h2>Examples de pipe pour une date</h2>
+  <section>
+    <p>{{maDate | date: 'dd MMMM yyyy'}}</p>
+    <p>{{maDate | date: 'dd/MM/yy'}}</p>
+  </section>
+  <h2>Example de pipe custom (disposé dans le module shared)</h2>
+  <section>
+    <p>{{celsius | toFahrenheit}}</p>
+  </section>
+</article>
