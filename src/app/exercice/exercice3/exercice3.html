@@ -1,1 +1,25 @@
-<p>exercice3 works!</p>
+<h1>La liste de course</h1>
+<article>
+  <h2>Objectif:</h2>
+  <section>
+    <p>Mettre en place une shopping list en deux composant.</p>
+    <p>Dans le premier, un champ texte permettant l’ajout d’un article à la liste</p>
+    <p>Dans le deuxième, l’affichage de la liste et la possibilité de supprimer un article.</p>
+    <p>Les deux composant doivent être afficher sur la même page</p>
+  </section>
+  <h2>Exercice:</h2>
+  <section>
+    <article-selector (onArticleSelect)="ajouterArticle($event)"></article-selector>
+    @if (messageErreur.trim().length > 0) {
+      <p class="error">{{messageErreur}}</p>
+    }
+    <ul>
+    @for (article of listeCourse; track article; let i = $index) {
+      <li><p>{{article}}</p> <button (click)="retirerArticle(i)">Retirer l'article</button></li>
+    }
+    @empty {
+      <li><p>Il n'y a pas encore d'article</p></li>
+    }
+    </ul>
+  </section>
+</article>

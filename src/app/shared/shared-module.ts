@@ -6,6 +6,7 @@ import { ToFahrenheitPipe } from './pipes/to-fahrenheit-pipe';
 import { Highlight } from './directives/highlight';
 
 
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,12 +16,14 @@ import { Highlight } from './directives/highlight';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    FormsModule
   ],
   exports: [
     Menu,
     ToFahrenheitPipe,
-    Highlight
+    Highlight,
+    FormsModule
   ]
 })
 export class SharedModule { }
