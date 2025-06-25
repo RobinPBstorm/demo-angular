@@ -1,0 +1,20 @@
+<h1>La navigation "dynamique"</h1>
+<article>
+  <h2>Objectif:</h2>
+  <section>
+    <p> Sur base d’un modèle Link, mettre en place un menu de navigation réactif en fonction 
+d’une liste de lien définie dans le TS de nav-component</p>
+<p>Chaque module sera représenté dans le menu (Demo, Exercices) et sera l’occasion 
+d’un sous-menu affichée/cachée sur un click</p>
+  </section>
+  <section>
+    <div class="code">
+      <p>export class Link{{'{'}}</p>
+      <p>  public title: string;</p>
+      <p>  public url?: string;</p>
+      <p>  public children: Link[];</p>
+      <p>  public isVisible: boolean;</p>
+      <p>{{'}'}}</p>
+    </div>
+  </section>
+</article>

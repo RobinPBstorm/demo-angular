@@ -1,0 +1,107 @@
+<h1>Les directives</h1>
+<article>
+  <h2>Les components directives</h2>
+  <section>
+    <h3>ngStyle</h3>
+    <button (click)="enChartreuse=!enChartreuse">changer couleur</button>
+    <p [ngStyle]="{color: (enChartreuse? chartreuse: autreCouleur)}">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae aspernatur blanditiis accusamus eaque rerum laboriosam quia eveniet perferendis deserunt assumenda cumque asperiores quos voluptatem placeat dolores architecto amet doloremque, quis sunt soluta ratione sint aut quae deleniti. Delectus fuga distinctio impedit quaerat quod ullam, aspernatur maiores ipsum sint aliquid odit!</p>
+  </section>
+  <section>
+    <h3>ngClass</h3>
+    <p [ngClass]="{chartreuse: enChartreuse, mauve: !enChartreuse}">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, sit. Dicta nisi nulla laboriosam, dignissimos eligendi facere dolorum vitae tempore?</p>
+  </section>
+</article>
+
+<article>
+  <h2>Les structurals directives</h2>
+  <section>
+    <h3>ngIf / {{'@'}}if</h3>
+    <!-- Ancienne façon d'écrire le if -->
+    <!-- <div *ngIf="enChartreuse; else mauve">
+      <p>Les textes et fond dans la section précédente sont en chartreuse</p>
+    </div>
+    <ng-template #mauve>
+      <div>
+        <p>Les textes et fond dans la section précédente sont en mauve</p>
+      </div>
+    </ng-template> -->
+
+    <!-- La nouvelle façon -->
+    @if (enChartreuse){
+      <p>Les textes et fond dans la section précédente sont en chartreuse</p>
+    }
+    @else {
+      <p>Les textes et fond dans la section précédente sont en mauve</p>
+    }
+  </section>
+  <section>
+    <h3>ngFor / {{'@'}}for</h3>
+    <!-- Ancienne notation
+    <ul>
+      <li *ngFor="let nombre of mesNombres; let i = index">
+        <p>Le nombre position {{ i+1 }}: {{ nombre }}</p>
+      </li>
+    </ul> -->
+
+    <!--Nouvelle notation-->
+    <ul>
+    @for (nombre of mesNombres; track nombre; let i = $index) {
+      <li>
+        <p>Le nombre position {{ i+1 }}: {{ nombre }}</p>
+      </li>
+    }
+    </ul>
+
+    <h4>Exemple de for avec des objets</h4>
+    <div class="maBibliotheque">
+    @for (livre of mesLivres; track livre) {
+      <div [ngClass]="{livreClass: true, aventure: (livre.genre=='aventure'), fantaisie:(livre.genre=='fantaisie')}">
+        <h5>{{livre.titre}}</h5>
+        <p>Il contient {{livre.nombrePage}}</p>
+        <p>Et a été écrit par {{livre.auteur}}</p>
+      </div> 
+    }
+    </div>
+
+  </section>
+  <section>
+    <h3>ngSwitch / {{'@'}}switch</h3>
+    <!--Ancienne notation-->
+    <!-- <div [ngSwitch]="humeurDuJour">
+      <p *ngSwitchCase="'bien'">Trop cool alors!</p>
+      <p *ngSwitchCase="'bof'">Courage</p>
+      <p *ngSwitchCase="'pas top'">ça va allez mieux</p>
+      <p *ngSwitchDefault>Cliquez sur un boutton pour indiquer votre humeur</p>
+    </div> -->
+
+    <!--Nouvelle notation-->
+    <div>
+    @switch (humeurDuJour) {
+      @case ('bien') {
+        <p>Trop cool alors!</p>
+      }
+      @case ('bof') {
+        <p>Courage</p>
+      }
+      @case ('pas top') {
+        <p>ça va allez mieux</p>
+      }
+      @default {
+        <p>Cliquez sur un boutton pour indiquer votre humeur</p>
+      }
+    }
+    </div>
+    <div class="mesBoutons">
+      <button (click)="humeurDuJour='bien'">bien</button>
+      <button (click)="humeurDuJour='bof'">bof</button>
+      <button (click)="humeurDuJour='pas top'">pas top</button>
+    </div>
+  </section>
+</article>
+
+<article>
+  <h2>Les directives personnalisées</h2>
+  <section>
+    <p>Lorem ipsum <span Highlight>dolor</span> sit, amet consectetur adipisicing elit. <span Highlight>Suscipit</span> quasi temporibus itaque, voluptatem rem eligendi similique. <span Highlight>In praesentium</span> expedita tempora.</p>
+  </section>
+</article>
