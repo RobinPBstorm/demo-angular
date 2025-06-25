@@ -1,0 +1,15 @@
+<h1>Les inputs / outputs</h1>
+<article>
+  <h2>Les éléments du parent</h2>
+  <section>
+    <p>Le prénom de ce composant est {{prenomComposant}}</p>
+    <p>{{jeuDemandeParEnfant}}</p>
+  </section>
+
+  <h2>La partie pour l'enfant</h2>
+  <section class="jardinEnfant">
+    <enfant [prenomParent]="prenomComposant" (onGameSelect)="receivedGame($event)">
+      <p>Ce petit paragraphe venant du parent</p>
+    </enfant>
+  </section>
+</article>

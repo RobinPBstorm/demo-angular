@@ -1,0 +1,10 @@
+<h1>Dans le composant enfant</h1>
+<p>Le prénom du composant parent est {{prenomParent}}</p>
+
+<div>
+  <button (click)="sendGame('basket')">Aller faire du basket</button>
+  <button (click)="sendGame('pokémon')">Aller chasser les pokémons</button>
+  <button (click)="sendGame('jeu de role')">Lancer des dés</button>
+</div>
+
+<ng-content></ng-content>
